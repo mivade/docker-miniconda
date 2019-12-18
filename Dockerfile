@@ -10,6 +10,5 @@ FROM debian:stable-slim
 SHELL ["/bin/bash", "-c"]
 COPY --from=build /opt/miniconda /opt/miniconda
 WORKDIR /
-COPY entrypoint.sh /opt/miniconda/entrypoint.sh
 RUN /opt/miniconda/bin/conda init
 CMD ["/opt/miniconda/bin/python3"]
