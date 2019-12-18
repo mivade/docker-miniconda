@@ -7,9 +7,9 @@ RUN chmod +x miniconda.sh && \
 RUN /opt/miniconda/bin/conda clean -faipy
 
 FROM debian:stable-slim
+SHELL ["/bin/bash", "-c"]
 COPY --from=build /opt/miniconda /opt/miniconda
-WORKDIR /opt/miniconda
-COPY ./entrypoint.sh .
+WORKDIR /
+COPY entrypoint.sh /opt/miniconda/entrypoint.sh
 RUN /opt/miniconda/bin/conda init
-ENTRYPOINT ["/opt/miniconda/entrypoint.sh"]
-CMD ["python3"]
+CMD ["/opt/miniconda/bin/python3"]
