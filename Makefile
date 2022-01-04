@@ -1,11 +1,11 @@
 .PHONY: all build push
 
-tag ?= latest
+TAG ?= latest
 
 all: build
 
 build: Dockerfile
-	docker build -t mivade/miniconda:latest .
+	docker build -t mivade/miniconda:${TAG} .
 
 push: build
-	docker push mivade/miniconda:latest
+	docker push mivade/miniconda:${TAG}
