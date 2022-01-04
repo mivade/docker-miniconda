@@ -6,4 +6,5 @@ USER conda
 RUN conda update conda
 RUN /opt/conda/bin/conda init
 RUN /opt/conda/bin/conda clean -faipy
+RUN /opt/conda/bin/conda install -y pip
 CMD ["/opt/conda/bin/python3"]
