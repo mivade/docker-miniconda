@@ -1,4 +1,4 @@
-FROM continuumio/miniconda3:4.10.3
+FROM continuumio/miniconda3:4.12.0
 
 RUN useradd conda --home-dir /home/conda --create-home
 RUN chown -R conda /opt/conda
